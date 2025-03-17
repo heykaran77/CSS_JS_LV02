@@ -52,6 +52,16 @@ function handleSearchFunction() {
 
   input.addEventListener("focus", () => {
     document.querySelector(".overlay").style.display = "block";
+
+    var clutter = "";
+    arr.forEach((obj) => {
+      clutter += `<div class="res flex px-8 py-3">
+          <i class="ri-search-line font-semibold mr-5"></i>
+          <h3 class="font-semibold">${obj.name}</h3>
+        </div>`;
+    });
+    document.querySelector(".searchdata").style.display = "block";
+    document.querySelector(".searchdata").innerHTML = clutter;
   });
   input.addEventListener("blur", () => {
     document.querySelector(".overlay").style.display = "none";
